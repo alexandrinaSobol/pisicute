@@ -1,0 +1,26 @@
+
+  <nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton" style ="width: 20%">
+    <input type="text" nz-input placeholder="input segggarch text" />
+  </nz-input-group>
+  <ng-template #suffixIconButton>
+    <button nz-button nzType="primary" nzSearch><i nz-icon nzType="search"></i></button>
+    <button nz-button nzType="primary" nzGhost>Add new cat</button>
+  </ng-template>
+  <br />
+  <br />
+<nz-table #sortTable [nzData]="listOfData" nzTableLayout="fixed">
+    <thead>
+      <tr>
+        <th *ngFor="let column of listOfColumn" [nzSortFn]="column.compare" [nzSortPriority]="column.priority">{{ column.title }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of sortTable.data">
+        <td>{{ data.name }}</td>
+        <td>{{ data.breed }}</td>
+        <td>{{ data.age }}</td>
+        <td>{{ data.addDate }}</td>
+        <td>{{ data.updateDate }}</td>
+      </tr>
+    </tbody>
+  </nz-table>
