@@ -16,16 +16,25 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { CatsComponent } from './cats/cats.component';
 import { RouterModule } from "@angular/router";
-//import { CatComponent } from './cat/cat.component';
-
+import * as AllIcons from '@ant-design/icons-angular/icons';
+import { IconDefinition } from '@ant-design/icons-angular';
+import { ViewCatComponent } from './view-cat/view-cat.component';
 import { DemoNgZorroAntdModule } from './ng-zorro-antd.module';
+//import { WelcomeComponent } from './pages/welcome/welcome.component';
+
+
 
 registerLocaleData(en);
-
+// const antDesignIcons = AllIcons as {
+//   [key: string]: IconDefinition;
+// };
+// const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key])
 @NgModule({
   declarations: [
     AppComponent,
     CatsComponent,
+    ViewCatComponent,
+    
     //CatComponent
   ],
   imports: [
@@ -40,7 +49,8 @@ registerLocaleData(en);
     NzButtonModule,
     DemoNgZorroAntdModule,
     RouterModule.forRoot([
-      { path: "cats", component: CatsComponent}
+      { path: "cats", component: CatsComponent},
+      { path: "viewCats", component: ViewCatComponent}
     ])
     
   ],
