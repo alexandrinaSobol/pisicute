@@ -35,10 +35,5 @@ export class WiewCatsComponent implements OnInit {
   }
 
 
-  console(value: number) {
-    const catss = cats.find(catss => catss.id === value);
-    console.log("ati adaugat produsul in cos " + catss?.name );
-  }
-
 
 }
