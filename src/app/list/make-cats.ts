@@ -1,11 +1,14 @@
-export const cats = [
+import {Cats} from './cats'
+
+export const CATS: Cats[] = [
     {
         id: 1,
         name: 'Bella',
         breed: 'Abyssinian',
         age: 1,
         addDate: '1970-01-09 18:45:09',
-        updateDate: '1970-01-09 18:45:10'
+        updateDate: '1970-01-09 18:45:10',
+    
       },
       {
         id: 2,

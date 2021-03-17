@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { ActivatedRoute } from "@angular/router";
 import { CatsComponent } from '../cats/cats.component'
-import {cats } from '../cats'
+import {Cats } from '../../list/cats'
 
 @Component({
   selector: 'app-wiew-cats',
@@ -23,11 +23,11 @@ export class WiewCatsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const routeParams = this.route.snapshot.paramMap;
-    const catIdFromRoute = Number(routeParams.get("catId"));
+    // const routeParams = this.route.snapshot.paramMap;
+    // const catIdFromRoute = Number(routeParams.get("catId"));
 
-    // Find the product that correspond with the id provided in route.
-    this.cat = cats.find(cats => cats.id === catIdFromRoute);
+    // // Find the product that correspond with the id provided in route.
+    // this.cat = Cats.find(cats => cats.id === catIdFromRoute);
   }
 
   destroyModal(): void {

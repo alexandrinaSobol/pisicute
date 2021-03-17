@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
 import { AddCatComponent } from '../add-cat/add-cat.component';
 import { WiewCatsComponent } from '../wiew-cats/wiew-cats.component'
-import { cats } from '../cats'
+import { Cats } from '../../list/cats'
+import { CATS } from '../../list/make-cats';
 
 @Component({
   selector: 'app-cats',
@@ -11,7 +12,7 @@ import { cats } from '../cats'
 })
 
 export class CatsComponent implements OnInit {
-  cats = cats;
+  cats: Cats[] = [];
   listOfColumn = [
     {
       title: 'Get Name',
@@ -65,12 +66,19 @@ export class CatsComponent implements OnInit {
   // }
 
   ngOnInit(): void {
+    this.getCats();
+
+  }
+  getCats(): void{
+    this.cats=CATS;
+
   }
 
-  console(value: number) {
-    const catss = cats.find(catss => catss.id === value);
-    console.log("ati adaugat produsul in cos " + catss?.name );
-  }
+
+  // console(value: number) {
+  //   const catss = cats.find(catss => catss.id === value);
+  //   console.log("ati adaugat produsul in cos " + catss?.name );
+  // }
 }
 interface CatItem {
   name: string;

@@ -14,14 +14,15 @@ import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-import { CatsComponent } from './cats/cats.component';
+import { CatsComponent } from './component/cats/cats.component';
 import { RouterModule } from "@angular/router";
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { IconDefinition } from '@ant-design/icons-angular';
-import { AddCatComponent } from './add-cat/add-cat.component';
+import { AddCatComponent } from './component/add-cat/add-cat.component';
 import { DemoNgZorroAntdModule } from './ng-zorro-antd.module';
-import { AddFormService } from './add-form.service';
-import { WiewCatsComponent } from './wiew-cats/wiew-cats.component'
+import { AddFormService } from './service/add-form.service';
+import { WiewCatsComponent } from './component/wiew-cats/wiew-cats.component';
+import { SearchCatComponent } from './component/search-cat/search-cat.component'
 
 
 registerLocaleData(en);
@@ -35,6 +36,7 @@ registerLocaleData(en);
     CatsComponent,
     AddCatComponent,
     WiewCatsComponent,
+    SearchCatComponent,
     
     //CatComponent
   ],

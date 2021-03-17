@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
-import { AddFormService } from '../add-form.service'
-import {breeds} from '../breeds';
+import { AddFormService } from '../../service/add-form.service'
+import {breeds} from '../../list/breeds';
 
 
 @Component({

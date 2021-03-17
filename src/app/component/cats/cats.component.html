@@ -1,9 +1,4 @@
-<nz-input-group nzSearch [nzAddOnAfter]="suffixIconButton" style="width: 20%">
-  <input type="text" nz-input placeholder="Search" />
-</nz-input-group>
-<ng-template #suffixIconButton>
-  <button nz-button nzType="primary" nzSearch><i nz-icon nzType="search"></i></button>
-</ng-template>
+<app-search-cat></app-search-cat>
 <button nz-button nzType="primary" nzGhost (click)="addCatsModal()" style=" float: right;">
   <span>Add new cat</span>
 </button>
