@@ -1,0 +1,33 @@
+<div>
+  <nz-form-item>
+    <nz-form-label>Cat name</nz-form-label>
+    <nz-form-control nzHasFeedback [nzSpan]="12" nzErrorTip=" Enter cat name">
+      <input nz-input [(ngModel)]="name" name="name" placeholder="Enter cat name" required />
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label>Description </nz-form-label>
+    <nz-form-control nzHasFeedback [nzSpan]="12" nzErrorTip=" Enter cat name">
+      <button nz-button><i nz-icon nzType="upload"></i>Click to Upload</button>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-label nzFor="breed" nzRequired>Breed</nz-form-label>
+    <nz-form-control [nzSpan]="12" nzErrorTip="Please select your gender!">
+      <nz-select>
+        <nz-option [nzValue]="breed.name" *ngFor="let breed of breeds" [nzLabel]="breed.name"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label>Age</nz-form-label>
+    <nz-form-control nzHasFeedback [nzSpan]="5" nzErrorTip=" Enter age">
+      <input nz-input [(ngModel)]="age" name="age" placeholder="Age" required />
+    </nz-form-control>
+  </nz-form-item>
+</div>
+<div *nzModalFooter>
+  <button nz-button nzType="default" (click)="destroyModal()">Cancel</button>
+  <button nz-button nzType="primary" (click)="destroyModal()">Save</button>
+</div>

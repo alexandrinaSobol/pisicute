@@ -18,10 +18,10 @@ import { CatsComponent } from './cats/cats.component';
 import { RouterModule } from "@angular/router";
 import * as AllIcons from '@ant-design/icons-angular/icons';
 import { IconDefinition } from '@ant-design/icons-angular';
-import { ViewCatComponent } from './view-cat/view-cat.component';
+import { AddCatComponent } from './add-cat/add-cat.component';
 import { DemoNgZorroAntdModule } from './ng-zorro-antd.module';
-//import { WelcomeComponent } from './pages/welcome/welcome.component';
-
+import { AddFormService } from './add-form.service';
+import { WiewCatsComponent } from './wiew-cats/wiew-cats.component'
 
 
 registerLocaleData(en);
@@ -33,7 +33,8 @@ registerLocaleData(en);
   declarations: [
     AppComponent,
     CatsComponent,
-    ViewCatComponent,
+    AddCatComponent,
+    WiewCatsComponent,
     
     //CatComponent
   ],
@@ -50,11 +51,12 @@ registerLocaleData(en);
     DemoNgZorroAntdModule,
     RouterModule.forRoot([
       { path: "cats", component: CatsComponent},
-      { path: "viewCats", component: ViewCatComponent}
+      { path: "addCats", component: AddCatComponent},
+      { path: "cats/:cattId", component: WiewCatsComponent },
     ])
     
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [{ provide: NZ_I18N, useValue: en_US }, AddFormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

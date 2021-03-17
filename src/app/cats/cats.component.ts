@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NzModalRef, NzModalService } from 'ng-zorro-antd/modal';
+import { AddCatComponent } from '../add-cat/add-cat.component';
+import { WiewCatsComponent } from '../wiew-cats/wiew-cats.component'
+import { cats } from '../cats'
+
 @Component({
   selector: 'app-cats',
   templateUrl: './cats.component.html',
@@ -6,9 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class CatsComponent implements OnInit {
-  isVisible = false;
-  isConfirmLoading = false;
-
+  cats = cats;
   listOfColumn = [
     {
       title: 'Get Name',
@@ -42,38 +45,28 @@ export class CatsComponent implements OnInit {
     }
 
   ];
+  constructor(private modalService: NzModalService) { }
 
-  listOfData: CatItem[] = [
-    {
-      name: 'Bella',
-      breed: 'Abyssinian',
-      age: 1,
-      addDate: '1970-01-09 18:45:09',
-      updateDate: '1970-01-09 18:45:10'
-    },
-    {
-      name: 'Charlie',
-      breed: 'Birman',
-      age: 2,
-      addDate: '2010-01-09 18:45:09',
-      updateDate: '2010-04-09 18:45:10'
-    }
-  ];
-  constructor() { }
-
-  addCats(): void {
-    this.isVisible = true;
+  addCatsModal(): void {
+    this.modalService.create({
+      nzTitle: 'Modal Title',
+      nzContent: AddCatComponent
+    });
+  }
+  viewCatsModal(): void {
+    this.modalService.create({
+      nzTitle: 'Modal Title',
+      nzContent: WiewCatsComponent
+    });
   }
 
-  editCat(cat: any): void {
-    console.log(cat);
-  }
+  // viewCat(cat: any): void {
+  //   console.log(cat);
+  // }
 
   ngOnInit(): void {
   }
-
 }
-
 interface CatItem {
   name: string;
   breed: string;
