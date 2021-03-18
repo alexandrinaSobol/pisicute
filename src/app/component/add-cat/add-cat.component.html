@@ -15,7 +15,7 @@
     <nz-form-label nzFor="breed" nzRequired>Breed</nz-form-label>
     <nz-form-control [nzSpan]="12" nzErrorTip="Please select your gender!">
       <nz-select>
-        <nz-option [nzValue]="breed.name" *ngFor="let breed of breeds" [nzLabel]="breed.name"></nz-option>
+        <nz-option [nzValue]="breed.name" *ngFor="let breed of breeds" [nzLabel]="breed.name" [(ngModel)]="breed.name"></nz-option>
       </nz-select>
     </nz-form-control>
   </nz-form-item>
@@ -29,5 +29,5 @@
 </div>
 <div *nzModalFooter>
   <button nz-button nzType="default" (click)="destroyModal()">Cancel</button>
-  <button nz-button nzType="primary" (click)="destroyModal()">Save</button>
+  <button nz-button nzType="primary" (click)="destroyModal()" (click)="addCatClick(cat)">Save</button>
 </div>

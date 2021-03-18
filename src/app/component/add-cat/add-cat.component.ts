@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NzModalRef } from 'ng-zorro-antd/modal';
 import { AddFormService } from '../../service/add-form.service'
 import {breeds} from '../../list/breeds';
+import {Cats} from '../../list/cats'
+import { HttpClient } from '@angular/common/http';
+import { CatService } from '../../service/cat.service'
 
 
 @Component({
@@ -17,20 +20,27 @@ export class AddCatComponent implements OnInit {
   breeds=breeds;
   age: string ='';
 
+  cats: Cats[] = [];
+  
 
-  constructor(private addForm: AddFormService, private modal: NzModalRef) { }
+
+  constructor(private addForm: AddFormService, private modal: NzModalRef, private service: CatService, private http: HttpClient) { }
 
 
   ngOnInit(): void {
+    
+
   }
 
-  addCatClick(): any{
-    const cat = {
-      name: this.name,
-      //breed: this.breed,
-      age: this.age
-    };
+  
+    addCatClick(cat: Cats){
+      this.service.addCat(this.).subscribe(p: Cats) => {this.}
+   }
 
+
+   getPostPerson(){
+    this.service.PostPersonData(this.firstpers).subscribe((p: Cats) => {this.cats = p;} );
+ }
     // if (!this.addForm.addName(cat.name)) {
     //   console.log("Enter name");
     //   return false;

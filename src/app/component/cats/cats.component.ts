@@ -69,6 +69,7 @@ export class CatsComponent implements OnInit {
     this.getCats();
 
   }
+  
   getCats(): void{
     this.cats=CATS;
 

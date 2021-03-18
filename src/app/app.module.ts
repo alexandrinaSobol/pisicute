@@ -22,7 +22,10 @@ import { AddCatComponent } from './component/add-cat/add-cat.component';
 import { DemoNgZorroAntdModule } from './ng-zorro-antd.module';
 import { AddFormService } from './service/add-form.service';
 import { WiewCatsComponent } from './component/wiew-cats/wiew-cats.component';
-import { SearchCatComponent } from './component/search-cat/search-cat.component'
+import { SearchCatComponent } from './component/search-cat/search-cat.component';
+import { CatsDetailsComponent } from './cats-details/cats-details.component'
+
+import {CatService} from './service/cat.service'
 
 
 registerLocaleData(en);
@@ -37,6 +40,7 @@ registerLocaleData(en);
     AddCatComponent,
     WiewCatsComponent,
     SearchCatComponent,
+    CatsDetailsComponent,
     
     //CatComponent
   ],
@@ -58,7 +62,7 @@ registerLocaleData(en);
     ])
     
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }, AddFormService],
+  providers: [{ provide: NZ_I18N, useValue: en_US }, AddFormService, CatService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
